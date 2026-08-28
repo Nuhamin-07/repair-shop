@@ -4,6 +4,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -115,6 +135,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.animate-appear {
+  animation: appear 1s ease-in-out;
+}
+
+.animate-slide {
+  animation: slide 750ms ease-in-out;
 }
 
 @layer base {
